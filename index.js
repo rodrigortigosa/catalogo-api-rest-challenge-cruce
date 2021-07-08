@@ -1,3 +1,4 @@
+const { request, response } = require("express");
 const express = require("express");
 const app = express();
 
@@ -49,4 +50,11 @@ app.post(baseURL + "/products", (request, response) => {
   products = products.concat(newProduct);
   idCount++;
   response.status(201).json(newProduct);
+});
+
+app.delete(baseURL + "/products/:id", (request, response) => {
+  const id = Number(request.params.id);
+  products = products.filter((product) => product.id !== id);
+
+  response.status(204).end();
 });
