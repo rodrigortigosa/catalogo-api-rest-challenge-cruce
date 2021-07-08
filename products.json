@@ -1,0 +1,39 @@
+[
+	{	
+		"id": 1,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 1",
+		"price": 100.00
+	},
+	{
+		"id": 2,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 2",
+		"price": 200.00
+	},
+	{
+		"id": 3,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 3",
+		"price": 300.00
+	},
+	{
+		"id": 4,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 4",
+		"price": 400.00
+	},
+	{	
+		"id": 5,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 5",
+		"price": 500.00
+	},
+	{
+		"id": 6,
+		"image": "http://via.placeholder.com/150x150",
+		"name": "Producto 6",
+		"price": 600.00
+	}
+	
+]

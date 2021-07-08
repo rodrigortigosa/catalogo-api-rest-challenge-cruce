@@ -1,0 +1,27 @@
+{
+  "name": "catalogo-api-rest",
+  "version": "1.0.0",
+  "description": "Api Rest de catalogo para el challenge de Cruce",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigortigosa/catalogo-api-rest-challenge-cruce.git"
+  },
+  "author": "rodrigortigosa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigortigosa/catalogo-api-rest-challenge-cruce/issues"
+  },
+  "homepage": "https://github.com/rodrigortigosa/catalogo-api-rest-challenge-cruce#readme",
+  "devDependencies": {
+    "nodemon": "2.0.10"
+  },
+  "dependencies": {
+    "express": "4.17.1"
+  }
+}
