@@ -43,6 +43,6 @@ app.post(baseURL + "/products", (request, response) => {
   };
 
   products = products.concat(newProduct);
-
+  idCount++;
   response.json(newProduct);
 });
