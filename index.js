@@ -27,7 +27,11 @@ app.get(baseURL, (request, response) => {
 });
 
 app.get(baseURL + "/products", (request, response) => {
-  response.json(products);
+  if (products.length === 0) {
+    response.send("No hay productos");
+  } else {
+    response.json(products);
+  }
 });
 
 let idCount = products.length + 1;
@@ -44,5 +48,5 @@ app.post(baseURL + "/products", (request, response) => {
 
   products = products.concat(newProduct);
   idCount++;
-  response.json(newProduct);
+  response.status(201).json(newProduct);
 });
