@@ -51,3 +51,17 @@ app.delete(baseURL + "/products/:id", (request, response) => {
 
   response.status(204).end();
 });
+
+app.put(baseURL + "/products/:id", (request, response) => {
+  const id = Number(request.params.id);
+  const productEdited = request.body;
+
+  products.map((productToEdit) => {
+    if (productToEdit.id === id) {
+      productToEdit.image = productEdited.image;
+      productToEdit.name = productEdited.name;
+      productToEdit.price = productEdited.price;
+    }
+  });
+  response.json(productEdited);
+});
