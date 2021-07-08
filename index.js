@@ -18,12 +18,14 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-app.get("/api", (request, response) => {
+const baseURL = "/api";
+
+app.get(baseURL, (request, response) => {
   response.send("<h1>API Rest de catalogo para el challenge de Cruce</h1>");
 });
 
 let products = productsJSON;
 
-app.get("/api/products", (request, response) => {
+app.get(baseURL + "/products", (request, response) => {
   response.json(products);
 });
