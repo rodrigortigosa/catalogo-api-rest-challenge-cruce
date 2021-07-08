@@ -1,5 +1,16 @@
 const express = require("express");
 const app = express();
+
+//para permitir las politicas de CORS
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 const productsJSON = require("./products.json");
 
 const PORT = 3001;
