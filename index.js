@@ -65,3 +65,9 @@ app.put(baseURL + "/products/:id", (request, response) => {
   });
   response.json(productEdited);
 });
+
+app.use((request, response) => {
+  response.status(404).json({
+    error: "Not found",
+  });
+});
