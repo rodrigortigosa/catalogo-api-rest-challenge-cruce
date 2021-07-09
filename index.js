@@ -14,13 +14,11 @@ app.listen(PORT, () => {
 
 let products = require("./products.json");
 
-const baseURL = "/api";
-
-app.get(baseURL, (request, response) => {
+app.get("/", (request, response) => {
   response.send("<h1>API Rest de catalogo para el challenge de Cruce</h1>");
 });
 
-app.get(baseURL + "/products", (request, response) => {
+app.get("/products", (request, response) => {
   if (products.length === 0) {
     response.send("No hay productos");
   } else {
@@ -28,7 +26,7 @@ app.get(baseURL + "/products", (request, response) => {
   }
 });
 
-app.get(baseURL + "/products/:id", (request, response) => {
+app.get("/products/:id", (request, response) => {
   const id = Number(request.params.id);
   const product = products.find((product) => product.id === id);
   if (product) {
@@ -42,7 +40,7 @@ app.get(baseURL + "/products/:id", (request, response) => {
 
 let idCount = products.length + 1;
 
-app.post(baseURL + "/products", (request, response) => {
+app.post("/products", (request, response) => {
   const product = request.body;
 
   const newProduct = {
@@ -57,14 +55,14 @@ app.post(baseURL + "/products", (request, response) => {
   response.status(201).json(newProduct);
 });
 
-app.delete(baseURL + "/products/:id", (request, response) => {
+app.delete("/products/:id", (request, response) => {
   const id = Number(request.params.id);
   products = products.filter((product) => product.id !== id);
 
   response.status(204).end();
 });
 
-app.put(baseURL + "/products/:id", (request, response) => {
+app.put("/products/:id", (request, response) => {
   const id = Number(request.params.id);
   const productEdited = request.body;
 
