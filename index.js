@@ -7,7 +7,7 @@ app.use(express.json());
 //para permitir las politicas de CORS
 app.use(cors());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
@@ -25,6 +25,18 @@ app.get(baseURL + "/products", (request, response) => {
     response.send("No hay productos");
   } else {
     response.json(products);
+  }
+});
+
+app.get(baseURL + "/products/:id", (request, response) => {
+  const id = Number(request.params.id);
+  const product = products.find((product) => product.id === id);
+  if (product) {
+    response.status(200).json(product);
+  } else {
+    response.status(404).json({
+      error: "Not found",
+    });
   }
 });
 
