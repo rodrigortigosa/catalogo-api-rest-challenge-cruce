@@ -34,6 +34,12 @@
 		"name": "Producto 6",
 		"image": "http://via.placeholder.com/150x150",
 		"price": 600.00
+	},
+	{
+		"id": 7,
+		"name": "Producto 7",
+		"image": "http://via.placeholder.com/150x150",
+		"price": 700.00
 	}
 	
 ]
